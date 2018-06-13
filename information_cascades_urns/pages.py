@@ -37,7 +37,9 @@ class WaitingRoom(Page):
 
     def vars_for_template(self):
         return ({'index_in_pages': self._index_in_pages,
-                 'time_left': max(self.wait_before_leave - self.player.sec_spent, 0)
+                 'time_left': max(self.wait_before_leave - self.player.sec_spent, 0),
+                 'title_text': 'Title',
+                 'body_text': 'Body'
                  })
 
     def before_next_page(self):
@@ -45,7 +47,7 @@ class WaitingRoom(Page):
 
 
 class Choose(Page):
-    form_model = models.Player
+    form_model = 'player'
     form_fields = ['choice_of_urn']
 
     # timeout_seconds = 20

@@ -1,5 +1,5 @@
 {% extends "global/Page.html" %}
-{% load staticfiles otree_tags %}
+{% load staticfiles otree %}
 
 {% block content %}
     {% include Constants.instructions_template %}
@@ -44,7 +44,7 @@
 
     You have to guess: Are you standing in front of Urn A or Urn B?
     </p>
-    {% formfield player.choice_of_urn with label=None%}
+    {% formfield player.choice_of_urn label=None%}
     {%  next_button %}
 
 {% endblock %}

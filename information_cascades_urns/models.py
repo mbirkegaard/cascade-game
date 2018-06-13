@@ -24,7 +24,7 @@ class Constants(BaseConstants):
     wait_before_leave = 30
 
 class Subsession(BaseSubsession):
-    storyline = models.CharField()
+    storyline = models.StringField()
     room_busy = models.BooleanField(initial=False)
     pay_per_min = models.FloatField(doc='how much to pay per minute of waiting. Set to 0 to pay nothing')
     wait_before_leave = models.IntegerField(doc='how many seconds to wait. Set to negative number '
@@ -52,8 +52,8 @@ class Player(BasePlayer):
     sec_spent = models.IntegerField(doc='number of seconds spent on waiting page')
     sec_earned = models.FloatField(doc='dollars earned for waiting')
     decision_order = models.IntegerField(initial=10^10)
-    current_ball = models.CharField()                   # the color of the ball a player will draw
-    choice_of_urn = models.CharField(                   # the guess by the player
+    current_ball = models.StringField()                   # the color of the ball a player will draw
+    choice_of_urn = models.StringField(                   # the guess by the player
         choices=['A', 'B'],
         widget=widgets.RadioSelectHorizontal()
     )
